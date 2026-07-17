@@ -12,3 +12,16 @@
 html {
 	font-size: 16.3pt !important;
 }
+
+/* Crispness on forward navigation.
+ *
+ * Symptom: advancing a slide/click leaves all text slightly blurred; going
+ * back instantly sharpens it. Cause: the forward reveal/enter animation
+ * promotes the scaled slide to a GPU layer, which Chrome then keeps as a
+ * resampled bitmap until a full repaint (which reverse navigation forces).
+ * Removing the reveal transition means nothing animates forward, so the slide
+ * is never promoted and stays crisp. v-clicks still reveal, just instantly.
+ */
+.slidev-vclick-target {
+	transition: none !important;
+}
