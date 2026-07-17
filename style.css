@@ -1,17 +1,4 @@
-/* Shared across all decks (symlinked as <deck>/style.css).
- *
- * Sharpness trick: each deck sets `canvasWidth: 1600` so Slidev renders the
- * slide larger than a typical browser window and only ever *downscales* it to
- * fit. Downscaling stays crisp; upscaling (the 980px default) is what blurred.
- *
- * Rendering bigger would shrink the text, so we scale the base font back up by
- * the same factor (1600 / 980 ≈ 1.63, i.e. 10pt -> 16.3pt). Net effect: text
- * looks exactly as before, just rendered at higher resolution. Figures are
- * sized in the decks with the same 1.63x factor to keep proportions identical.
- */
-html {
-	font-size: 16.3pt !important;
-}
+/* Shared across all decks (symlinked as <deck>/style.css). */
 
 /* Crispness on forward navigation.
  *

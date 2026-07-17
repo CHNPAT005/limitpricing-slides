@@ -15,7 +15,6 @@ themeConfig:
   paginationPagesDisabled: [1]
 infoLine: true
 mdc: true
-canvasWidth: 1600
 transition: none
 drawings:
   enabled: false
@@ -116,7 +115,7 @@ $$ y = f(x;\, \theta) $$
 
 ::right::
 
-<img src="../figures/example.png" class="mx-auto rounded shadow" style="height: 425px" />
+<img src="../figures/example.png" class="mx-auto rounded shadow" style="height: 260px" />
 
 ---
 
@@ -126,7 +125,7 @@ Build schematics as **inline SVG**, not images: they scale with the slide, so th
 stay razor-sharp at any zoom. Reveal parts with `v-click`, just like text.
 
 <div class="flex justify-center mt-6">
-<svg viewBox="0 0 640 236" style="width: 900px; max-width: 100%; height: auto; font-family: Montserrat, ui-sans-serif, sans-serif;">
+<svg viewBox="0 0 640 236" style="width: 600px; max-width: 100%; height: auto; font-family: Montserrat, ui-sans-serif, sans-serif;">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#334155" />
