@@ -15,6 +15,7 @@ themeConfig:
   paginationPagesDisabled: [1]
 infoLine: true
 mdc: true
+transition: fade
 drawings:
   enabled: false
 ---
