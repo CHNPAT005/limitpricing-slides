@@ -1,6 +1,46 @@
 /* Shared across all decks (symlinked as <deck>/style.css). */
 
-/* Crispness on forward navigation.
+/* =====================================================================
+ * COLOUR SCHEME
+ * ---------------------------------------------------------------------
+ * Frankfurt's default indigo (#3333B3) is quite saturated. Everything blue
+ * in the theme (the h1 banner, the <Item> boxes, the footer bar) is routed
+ * through the four variables below, so you can reskin the whole deck by
+ * editing just this block.
+ *
+ * Default here: a muted slate-blue, easier on the eyes but still blue.
+ * To try another scheme, paste one of these over the four values:
+ *
+ *   Slate (blue-grey):   #3a4a5c  #1e293b  #33465a  #eef2f6
+ *   Deep teal:           #2f6461  #1f4a48  #285754  #e8f0ef
+ *   Warm graphite:       #3f3f46  #27272a  #35353b  #efeff1
+ *                        (accent) (dark)   (mid)    (fill)
+ * ===================================================================== */
+:root {
+	--accent:      #414d80;  /* banner, item header, footer base cell */
+	--accent-dark: #2c3557;  /* footer left cell (darkest)            */
+	--accent-mid:  #384368;  /* footer middle cell                    */
+	--accent-fill: #eceef5;  /* item body background (light tint)     */
+}
+
+/* h1 banner (and its drop shadow) */
+#app .slidev-page h1,
+#app .slidev-layout h1 {
+	background: var(--accent) !important;
+	--un-shadow-color: var(--accent) !important;
+}
+
+/* <Item> callout boxes: coloured header, light body */
+#app .item header { background: var(--accent) !important; }
+#app .item main   { background: var(--accent-fill) !important; }
+
+/* InfoLine footer: three cells, dark -> mid -> base (overrides inline styles) */
+#app footer.bottom-0.flex > div:nth-child(1) { background: var(--accent-dark) !important; }
+#app footer.bottom-0.flex > div:nth-child(2) { background: var(--accent-mid)  !important; }
+#app footer.bottom-0.flex > div:nth-child(3) { background: var(--accent)      !important; }
+
+/* =====================================================================
+ * Crispness on forward navigation.
  *
  * Symptom: advancing a slide/click leaves all text slightly blurred; going
  * back instantly sharpens it. Cause: the forward reveal/enter animation
@@ -8,7 +48,7 @@
  * resampled bitmap until a full repaint (which reverse navigation forces).
  * Removing the reveal transition means nothing animates forward, so the slide
  * is never promoted and stays crisp. v-clicks still reveal, just instantly.
- */
+ * ===================================================================== */
 .slidev-vclick-target {
 	transition: none !important;
 }
