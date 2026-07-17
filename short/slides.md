@@ -15,6 +15,7 @@ themeConfig:
   paginationPagesDisabled: [1]
 infoLine: true
 mdc: true
+canvasWidth: 1600
 transition: none
 drawings:
   enabled: false
@@ -115,7 +116,7 @@ $$ y = f(x;\, \theta) $$
 
 ::right::
 
-<img src="../figures/example.png" class="mx-auto rounded shadow" style="height: 260px" />
+<img src="../figures/example.png" class="mx-auto rounded shadow" style="height: 425px" />
 
 ---
 section: Takeaway
