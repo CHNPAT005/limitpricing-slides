@@ -15,7 +15,6 @@ themeConfig:
   paginationPagesDisabled: [1]
 infoLine: true
 mdc: true
-canvasWidth: 1440
 transition: none
 drawings:
   enabled: false
