@@ -1,0 +1,59 @@
+name: Deploy slides to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install
+
+      - name: Build every deck (each <folder>/slides.md)
+        run: |
+          REPO="${{ github.event.repository.name }}"
+          rm -rf dist
+          for md in $(find . -path ./node_modules -prune -o -name slides.md -print); do
+            deck="${md#./}"; deck="${deck%/slides.md}"
+            echo "==> building $deck"
+            # Slidev's --out is relative to the slides.md folder, so use an absolute path
+            npx slidev build "$md" --base "/$REPO/$deck/" --out "$PWD/dist/$deck"
+          done
+
+      - name: Generate index page
+        run: |
+          REPO="${{ github.event.repository.name }}"
+          {
+            echo '<!doctype html><meta charset="utf-8"><title>Slides</title>'
+            echo '<style>body{font-family:system-ui,sans-serif;max-width:40rem;margin:4rem auto;padding:0 1rem;color:#1a1a1a}a{display:block;padding:.45rem 0;font-size:1.1rem}h1{font-weight:600}</style>'
+            echo "<h1>Slides</h1>"
+            for f in $(find dist -mindepth 2 -maxdepth 3 -name index.html | sort); do
+              d="${f#dist/}"; d="${d%/index.html}"
+              echo "<a href=\"/$REPO/$d/\">$d</a>"
+            done
+          } > dist/index.html
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4

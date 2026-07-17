@@ -1,0 +1,17 @@
+{
+  "name": "limitpricing-slides",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev:short": "slidev short/slides.md --open",
+    "dev:long": "slidev long/slides.md --open",
+    "build": "slidev build",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "latest",
+    "@slidev/theme-default": "latest",
+    "slidev-theme-frankfurt": "latest",
+    "vue": "^3.5"
+  }
+}
