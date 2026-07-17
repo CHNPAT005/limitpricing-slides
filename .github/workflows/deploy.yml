@@ -38,18 +38,11 @@ jobs:
             npx slidev build "$md" --base "/$REPO/$deck/" --out "$PWD/dist/$deck"
           done
 
-      - name: Generate index page
+      - name: Root page (no deck listing — direct links only)
         run: |
-          REPO="${{ github.event.repository.name }}"
-          {
-            echo '<!doctype html><meta charset="utf-8"><title>Slides</title>'
-            echo '<style>body{font-family:system-ui,sans-serif;max-width:40rem;margin:4rem auto;padding:0 1rem;color:#1a1a1a}a{display:block;padding:.45rem 0;font-size:1.1rem}h1{font-weight:600}</style>'
-            echo "<h1>Slides</h1>"
-            for f in $(find dist -mindepth 2 -maxdepth 3 -name index.html | sort); do
-              d="${f#dist/}"; d="${d%/index.html}"
-              echo "<a href=\"/$REPO/$d/\">$d</a>"
-            done
-          } > dist/index.html
+          # Intentionally do NOT enumerate decks. Anyone hitting the repo root
+          # gets sent to the homepage instead of a list of every talk.
+          printf '%s' '<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=https://patrickchang.net/"><title>Redirecting…</title>' > dist/index.html
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
