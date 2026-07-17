@@ -14,6 +14,24 @@ All decks share one `figures/` folder at the repo root, referenced as
 `../figures/<name>.png`. Pull a figure once and any deck can use it; a figure that
 only appears in the long version simply goes unused by the short one.
 
+## Frankfurt conventions (what the template uses)
+
+The [`frankfurt`](https://github.com/xxxeyu/slidev-theme-frankfurt) theme mirrors the
+Beamer "Frankfurt" look. The template follows its conventions:
+
+- **`# Title`** (h1) on a content slide renders the full-width **banner**. Use `#` for
+  every slide title; `##`/`###` are for subheads. On the cover it becomes a rounded badge.
+- **`section: Name`** in a slide's frontmatter starts a section — it populates the
+  **top navigation bar** with section names and progress dots. Group slides into a
+  handful of sections.
+- **Footer bar** (author · title · page · date) comes from the `author`, `title`, and
+  `date` fields in the cover frontmatter, shown because `infoLine: true`.
+- **`<v-clicks>`** around a list reveals bullets one at a time; **`<v-click>`** wraps a
+  single block. Leave blank lines inside the tags so the Markdown still renders.
+- **`<Item title="...">…</Item>`** is frankfurt's boxed callout (indigo header, light
+  body) — good for a result, definition, or highlighted case.
+- **Figures**: reference the shared folder as `../figures/name.png`.
+
 ## Edit / preview
 ```
 npm install

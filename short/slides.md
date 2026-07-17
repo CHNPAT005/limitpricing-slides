@@ -1,16 +1,20 @@
 ---
 theme: frankfurt
-title: Slide Deck Template (Short)
+title: Presentation Title
+titleTemplate: '%s'
+author: Author One, Author Two
+date: '2026'
 colorSchema: light
 layout: cover
-mdc: true
+class: text-center
 fonts:
   local: Montserrat, Roboto Slab, Roboto Mono
 themeConfig:
   paginationX: disabled
   paginationY: disabled
   paginationPagesDisabled: [1]
-info: Short template (~15 min)
+infoLine: true
+mdc: true
 drawings:
   enabled: false
 ---
@@ -25,79 +29,112 @@ drawings:
 
 <br>
 
-#### [patrickchang.net](https://patrickchang.net)
-
----
-
-## Motivation
-
-Open with the one question the talk answers. Keep it to a couple of sentences a tired audience can follow.
-
-- Set up the **context** in a single line
-- State the **gap** or the puzzle
-- Preview the **answer** so nobody has to wait for it
+#### Seminar / Conference Name, 2026
 
 <br>
 
-**This talk.** One sentence on what you do and what you find.
+#### [patrickchang.net](https://patrickchang.net)
 
 ---
+section: Motivation
+---
 
-## Setup
+# Motivation
+
+Open with the one question the talk answers.
+
+<v-clicks>
+
+- Set up the **context** in a single line
+- State the **gap** or the puzzle
+- Preview the **answer**, so nobody has to wait for it
+
+</v-clicks>
+
+<v-click>
+
+**This talk.** One sentence on what you do and what you find.
+
+</v-click>
+
+---
+section: Setup
+---
+
+# Setup
 
 Describe the object of study in plain terms first, notation second.
+
+<v-clicks>
 
 - **Ingredient A** — what it is, why it matters
 - **Ingredient B** — the second moving part
 - **Assumption** — the one simplification worth flagging
 
-Two regimes / cases / treatments to compare:
-
-- **Case 1** — the baseline
-- **Case 2** — the interesting one
+</v-clicks>
 
 ---
 
-## The main idea
+# Two cases
 
-State the central result. If there is one equation the audience should remember, it goes here:
+Compare a baseline against the case that drives the result.
 
-$$ y = f(x;\, \theta) $$
+<Item title="Case 1 — baseline">
+Nothing surprising happens here; this is the reference point.
+</Item>
 
-the quantity that captures the mechanism in a single line.
-
-**The tension.** One sentence on why the result is surprising or non-obvious.
+<Item title="Case 2 — the interesting one">
+Where the mechanism bites.
+</Item>
 
 ---
+section: Result
 layout: two-cols-header
 ---
 
-## Result
+# The main result
 
 ::left::
 
-Walk through the headline finding in words on the left.
+State the central finding in words.
+
+<v-clicks>
 
 - What happens in **Case 1**
 - What happens in **Case 2**
 - Why the contrast is the point
 
+</v-clicks>
+
+<v-click>
+
+$$ y = f(x;\, \theta) $$
+
+</v-click>
+
 ::right::
 
-<img src="../figures/example.png" class="rounded shadow ml-4" />
+<img src="../figures/example.png" class="mx-auto rounded shadow" style="height: 260px" />
 
 ---
+section: Takeaway
+---
 
-## Why it matters
+# Takeaways
 
-The takeaway, framed for the listener who remembers exactly one slide.
+<v-clicks>
 
-- Implication for **theory / practice / policy**
+- The headline result, restated for the listener who remembers one slide
+- The broader **implication** for theory, practice, or policy
 - What breaks if you ignore it
 
-<br>
+</v-clicks>
+
+<v-click>
 
 **Takeaway.** One crisp sentence they can repeat to a colleague afterwards.
+
+</v-click>
 
 ---
 layout: center
