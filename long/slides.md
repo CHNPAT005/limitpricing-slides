@@ -170,12 +170,12 @@ stay razor-sharp at any zoom. Reveal parts with `v-click`, just like text.
   </defs>
   <!-- inputs -->
   <rect x="16" y="34" width="150" height="52" rx="8" fill="#eef2f6" stroke="#334155" stroke-width="1.5"/>
-  <text x="91" y="66" text-anchor="middle" font-size="17" fill="#1e293b">Input A</text>
+  <text x="91" y="66" text-anchor="middle" font-size="13" fill="#1e293b">Input A</text>
   <rect x="16" y="150" width="150" height="52" rx="8" fill="#eef2f6" stroke="#334155" stroke-width="1.5"/>
-  <text x="91" y="182" text-anchor="middle" font-size="17" fill="#1e293b">Input B</text>
+  <text x="91" y="182" text-anchor="middle" font-size="13" fill="#1e293b">Input B</text>
   <!-- model -->
   <rect x="255" y="92" width="150" height="52" rx="8" fill="#3333B3"/>
-  <text x="330" y="124" text-anchor="middle" font-size="17" fill="#ffffff">Model</text>
+  <text x="330" y="124" text-anchor="middle" font-size="13" fill="#ffffff">Model</text>
   <!-- arrows in -->
   <path d="M166,60 C210,60 210,114 253,116" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
   <path d="M166,176 C210,176 210,122 253,120" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
@@ -183,8 +183,8 @@ stay razor-sharp at any zoom. Reveal parts with `v-click`, just like text.
   <g v-click>
     <path d="M405,118 L470,118" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
     <rect x="474" y="92" width="150" height="52" rx="8" fill="#fff7ed" stroke="#c2410c" stroke-width="1.5"/>
-    <text x="549" y="114" text-anchor="middle" font-size="17" fill="#9a3412">Outcome</text>
-    <text x="549" y="134" text-anchor="middle" font-size="11" fill="#9a3412">the result</text>
+    <text x="549" y="114" text-anchor="middle" font-size="13" fill="#9a3412">Outcome</text>
+    <text x="549" y="134" text-anchor="middle" font-size="10" fill="#9a3412">the result</text>
   </g>
 </svg>
 </div>
