@@ -1,18 +1,20 @@
 #!/usr/bin/env bash
-# Convert paper figures (PDF) into a deck's figures/ folder as web-ready PNGs.
+# Convert paper figures (PDF) into the shared figures/ folder as web-ready PNGs.
+# All decks reference these via ../figures/<name>.png, so a figure is pulled once
+# and every talk (short, long, ...) can use it.
 #
-# Usage:  ./pull-figures.sh <deck> <figure.pdf> [more.pdf ...]
-#   e.g.  ./pull-figures.sh short LPExample.pdf FreeComp.pdf
+# Usage:  ./pull-figures.sh <figure.pdf> [more.pdf ...]
+#   e.g.  ./pull-figures.sh LPExample.pdf FreeComp.pdf
 #
 # Each PDF is searched for (in order) under the sibling project folders:
 #   ../Paper/figures  ../Paper  ../Code/Figures
 # so once Overleaf is synced into ../Paper, its figures are picked up too.
 
 set -euo pipefail
-DECK="${1:?usage: pull-figures.sh <deck> <figure.pdf> ...}"; shift
+[ "$#" -ge 1 ] || { echo "usage: pull-figures.sh <figure.pdf> ..."; exit 1; }
 export PATH="/opt/homebrew/bin:$PATH"
 
-OUT="$DECK/figures"; mkdir -p "$OUT"
+OUT="figures"; mkdir -p "$OUT"
 SEARCH=("../Paper/figures" "../Paper" "../Code/Figures")
 
 for pdf in "$@"; do

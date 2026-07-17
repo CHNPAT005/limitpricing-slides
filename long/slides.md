@@ -91,7 +91,7 @@ Then note the twist: what unravels, what deviates, what does not behave as the b
 
 ::right::
 
-<img src="./figures/example.png" class="rounded shadow ml-4" />
+<img src="../figures/example.png" class="rounded shadow ml-4" />
 
 ---
 

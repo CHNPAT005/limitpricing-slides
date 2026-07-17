@@ -8,7 +8,11 @@ project can keep a short and a long version (and any others) in one repo.
 - `long/` — ~45-minute template → `patrickchang.net/limitpricing-slides/long/`
 
 > This is a content-free template. Copy a folder, replace the placeholder slides
-> with your talk, and drop the paper's figures into that folder's `figures/`.
+> with your talk, and drop the paper's figures into the shared `figures/` folder.
+
+All decks share one `figures/` folder at the repo root, referenced as
+`../figures/<name>.png`. Pull a figure once and any deck can use it; a figure that
+only appears in the long version simply goes unused by the short one.
 
 ## Edit / preview
 ```
@@ -19,11 +23,11 @@ npm run dev:long
 
 ## Pull figures from a paper
 `pull-figures.sh` converts paper PDFs (from `../Paper/…` once Overleaf is synced, or
-`../Code/Figures/`) into a deck's `figures/` as web-ready PNGs:
+`../Code/Figures/`) into the shared `figures/` folder as web-ready PNGs:
 ```
-./pull-figures.sh short MyFigure.pdf AnotherFigure.pdf
+./pull-figures.sh MyFigure.pdf AnotherFigure.pdf
 ```
-Then reference them in `slides.md`: `<img src="./figures/myfigure.png" />`.
+Then reference them in any `slides.md`: `<img src="../figures/myfigure.png" />`.
 
 ## Publish
 `git push` — GitHub Actions builds every `slides.md` and deploys. No local build needed.

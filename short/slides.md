@@ -84,7 +84,7 @@ Walk through the headline finding in words on the left.
 
 ::right::
 
-<img src="./figures/example.png" class="rounded shadow ml-4" />
+<img src="../figures/example.png" class="rounded shadow ml-4" />
 
 ---
 
