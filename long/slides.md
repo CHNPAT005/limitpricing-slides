@@ -157,6 +157,41 @@ Explain the mechanism in words. Keep each line short enough to read aloud.
 
 ---
 
+# A schematic diagram
+
+Build schematics as **inline SVG**, not images: they scale with the slide, so they
+stay razor-sharp at any zoom. Reveal parts with `v-click`, just like text.
+
+<div class="flex justify-center mt-6">
+<svg viewBox="0 0 640 236" style="width: 900px; max-width: 100%; height: auto; font-family: Montserrat, ui-sans-serif, sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155" />
+    </marker>
+  </defs>
+  <!-- inputs -->
+  <rect x="16" y="34" width="150" height="52" rx="8" fill="#eef2f6" stroke="#334155" stroke-width="1.5"/>
+  <text x="91" y="66" text-anchor="middle" font-size="17" fill="#1e293b">Input A</text>
+  <rect x="16" y="150" width="150" height="52" rx="8" fill="#eef2f6" stroke="#334155" stroke-width="1.5"/>
+  <text x="91" y="182" text-anchor="middle" font-size="17" fill="#1e293b">Input B</text>
+  <!-- model -->
+  <rect x="255" y="92" width="150" height="52" rx="8" fill="#3333B3"/>
+  <text x="330" y="124" text-anchor="middle" font-size="17" fill="#ffffff">Model</text>
+  <!-- arrows in -->
+  <path d="M166,60 C210,60 210,114 253,116" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M166,176 C210,176 210,122 253,120" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <!-- outcome, revealed on click -->
+  <g v-click>
+    <path d="M405,118 L470,118" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <rect x="474" y="92" width="150" height="52" rx="8" fill="#fff7ed" stroke="#c2410c" stroke-width="1.5"/>
+    <text x="549" y="114" text-anchor="middle" font-size="17" fill="#9a3412">Outcome</text>
+    <text x="549" y="134" text-anchor="middle" font-size="11" fill="#9a3412">the result</text>
+  </g>
+</svg>
+</div>
+
+---
+
 # Method
 
 State the tool precisely, once:

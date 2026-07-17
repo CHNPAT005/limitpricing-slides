@@ -31,6 +31,10 @@ Beamer "Frankfurt" look. The template follows its conventions:
 - **`<Item title="...">…</Item>`** is frankfurt's boxed callout (indigo header, light
   body) — good for a result, definition, or highlighted case.
 - **Figures**: reference the shared folder as `../figures/name.png`.
+- **Schematic diagrams**: prefer **inline `<svg>`** over a raster image — vector content
+  scales with the slide and stays crisp at any zoom, and you can `v-click` its parts.
+  The "A schematic diagram" slide is a reusable starting point. Keep raster (`.png`) for
+  photos and plots; export those at high DPI.
 
 ## Edit / preview
 ```
